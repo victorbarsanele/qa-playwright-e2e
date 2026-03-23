@@ -1,6 +1,11 @@
 # qa-playwright-e2e
 
 [![Playwright Tests](https://github.com/victorbarsanele/qa-playwright-e2e/actions/workflows/playwright.yml/badge.svg)](https://github.com/victorbarsanele/qa-playwright-e2e/actions/workflows/playwright.yml)
+![Status](https://img.shields.io/badge/status-in%20progress-yellow)
+
+> ⚠️ **Work in Progress** — This project is still under active development. Several features and test cases are yet to be implemented. Contributions and suggestions are welcome.
+>
+> ⚠️ **Em Desenvolvimento** — Este projeto ainda está em desenvolvimento ativo. Diversas features e casos de teste ainda serão adicionados. Contribuições e sugestões são bem-vindas.
 
 ---
 
