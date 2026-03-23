@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# TypeScript
+dist/
+*.js.map
+*.d.ts.map
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
