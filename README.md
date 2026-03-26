@@ -1,11 +1,7 @@
 # qa-playwright-e2e
 
 [![Playwright Tests](https://github.com/victorbarsanele/qa-playwright-e2e/actions/workflows/playwright.yml/badge.svg)](https://github.com/victorbarsanele/qa-playwright-e2e/actions/workflows/playwright.yml)
-![Status](https://img.shields.io/badge/status-in%20progress-yellow)
-
-> ⚠️ **Work in Progress** — This project is still under active development. Several features and test cases are yet to be implemented. Contributions and suggestions are welcome.
->
-> ⚠️ **Em Desenvolvimento** — Este projeto ainda está em desenvolvimento ativo. Diversas features e casos de teste ainda serão adicionados. Contribuições e sugestões são bem-vindas.
+![Status](https://img.shields.io/badge/status-maintained-brightgreen)
 
 ---
 
@@ -31,7 +27,7 @@
 
 ## Overview
 
-End-to-end test suite for [SauceDemo](https://www.saucedemo.com/) built with **Playwright** and **TypeScript**, following the **Page Object Model** pattern. Tests run across Chromium, Firefox and WebKit in parallel.
+End-to-end test suite for [SauceDemo](https://www.saucedemo.com/) built with **Playwright** and **TypeScript**, following the **Page Object Model** pattern. Tests run across Chromium, Firefox and WebKit in parallel, and page objects encapsulate selectors so spec files stay focused on user flows.
 
 ## Tech Stack
 
@@ -53,10 +49,14 @@ qa-playwright-e2e/
 │   └── user.json              # Shared test credentials
 ├── pages/
 │   ├── login.page.ts          # Login page object
-│   └── inventory.page.ts      # Inventory page object
+│   ├── inventory.page.ts      # Inventory page object
+│   ├── cart.page.ts           # Cart page object
+│   └── checkout.page.ts       # Checkout page object
 ├── tests/
 │   ├── login.spec.ts          # Login test suite
-│   └── inventory.spec.ts      # Inventory test suite
+│   ├── inventory.spec.ts      # Inventory test suite
+│   ├── cart.spec.ts           # Cart test suite
+│   └── checkout.spec.ts       # Checkout test suite
 ├── utils/
 │   └── data-generator.ts      # Faker-based data helpers
 ├── playwright.config.ts       # Playwright configuration
@@ -91,6 +91,9 @@ npx playwright test
 # Run a specific spec file
 npx playwright test tests/login.spec.ts
 
+# Run a single test by title
+npx playwright test tests/checkout.spec.ts -g "should fill checkout information and complete purchase"
+
 # Run on a single browser
 npx playwright test --project=chromium
 
@@ -111,9 +114,11 @@ Key settings in `playwright.config.ts`:
 | Parallelism | Full (local) / 1 worker (CI) |
 | Retries     | 0 (local) / 2 (CI)           |
 | Trace       | `on-first-retry`             |
+| Test ID     | `data-test`                  |
 | Reporter    | HTML                         |
 
 Test credentials live in `fixtures/user.json`.
+Page objects use `getByTestId(...)` where SauceDemo exposes `data-test` attributes, and fall back to structural selectors only when there is no stable test id.
 
 ## CI/CD
 
@@ -136,7 +141,7 @@ The GitHub Actions workflow (`.github/workflows/playwright.yml`) triggers on eve
 
 ## Visão Geral
 
-Suite de testes end-to-end para o [SauceDemo](https://www.saucedemo.com/), construída com **Playwright** e **TypeScript**, seguindo o padrão **Page Object Model**. Os testes são executados em paralelo nos navegadores Chromium, Firefox e WebKit.
+Suite de testes end-to-end para o [SauceDemo](https://www.saucedemo.com/), construída com **Playwright** e **TypeScript**, seguindo o padrão **Page Object Model**. Os testes são executados em paralelo nos navegadores Chromium, Firefox e WebKit, e os page objects encapsulam os seletores para manter as specs focadas no fluxo do usuário.
 
 ## Tecnologias
 
@@ -158,10 +163,14 @@ qa-playwright-e2e/
 │   └── user.json              # Credenciais de teste compartilhadas
 ├── pages/
 │   ├── login.page.ts          # Page object da página de login
-│   └── inventory.page.ts      # Page object da página de inventário
+│   ├── inventory.page.ts      # Page object da página de inventário
+│   ├── cart.page.ts           # Page object da página do carrinho
+│   └── checkout.page.ts       # Page object da página de checkout
 ├── tests/
 │   ├── login.spec.ts          # Suite de testes de login
-│   └── inventory.spec.ts      # Suite de testes de inventário
+│   ├── inventory.spec.ts      # Suite de testes de inventário
+│   ├── cart.spec.ts           # Suite de testes do carrinho
+│   └── checkout.spec.ts       # Suite de testes de checkout
 ├── utils/
 │   └── data-generator.ts      # Helpers de dados com Faker
 ├── playwright.config.ts       # Configuração do Playwright
@@ -196,6 +205,9 @@ npx playwright test
 # Executar um arquivo específico
 npx playwright test tests/login.spec.ts
 
+# Executar um único teste pelo título
+npx playwright test tests/checkout.spec.ts -g "should fill checkout information and complete purchase"
+
 # Executar em um único navegador
 npx playwright test --project=chromium
 
@@ -216,9 +228,11 @@ Principais configurações em `playwright.config.ts`:
 | Paralelismo  | Total (local) / 1 worker (CI) |
 | Tentativas   | 0 (local) / 2 (CI)            |
 | Trace        | `on-first-retry`              |
+| Test ID      | `data-test`                   |
 | Reporter     | HTML                          |
 
 As credenciais de teste estão em `fixtures/user.json`.
+Os page objects usam `getByTestId(...)` quando o SauceDemo expõe atributos `data-test`, e usam seletores estruturais apenas quando não há um test id estável.
 
 ## CI/CD
 
