@@ -1,8 +1,8 @@
 import { test } from '@playwright/test';
-import { InventoryPage } from '../pages/inventory.page';
-import { LoginPage } from '../pages/login.page';
-import { CartPage } from '../pages/cart.page';
-import user from '../fixtures/user.json';
+import { InventoryPage } from '../../pages/inventory.page';
+import { LoginPage } from '../../pages/login.page';
+import { CartPage } from '../../pages/cart.page';
+import user from '../../fixtures/user.json';
 
 test.describe('Cart Page', () => {
     // Login and prepare a cart with one item before each test.

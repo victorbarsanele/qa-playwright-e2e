@@ -124,6 +124,22 @@ Page objects use `getByTestId(...)` where SauceDemo exposes `data-test` attribut
 
 The GitHub Actions workflow (`.github/workflows/playwright.yml`) triggers on every push and pull request to `main`/`master`. It installs dependencies, runs all tests across the three browsers, and uploads the HTML report as a build artifact (retained 30 days).
 
+## 🔍 Quality Analysis
+
+During test automation, no evident functional bugs were identified in the application.
+
+However, some points of attention were observed:
+
+- Dependency on fixed data (default users)
+- Absence of more robust validations in negative scenarios
+- Possible fragility in selectors not based on data-test
+
+## 📄 Additional Documentation
+
+- Test strategy: /docs/test-strategy.md
+- Test cases: /docs/test-cases.md
+- Bugs found: /docs/bugs-found.md
+
 ---
 
 # Português
@@ -237,3 +253,19 @@ Os page objects usam `getByTestId(...)` quando o SauceDemo expõe atributos `dat
 ## CI/CD
 
 O workflow do GitHub Actions (`.github/workflows/playwright.yml`) é acionado a cada push e pull request para `main`/`master`. Ele instala as dependências, executa todos os testes nos três navegadores e faz upload do relatório HTML como artefato de build (retido por 30 dias).
+
+## 🔍 Análise de Qualidade
+
+Durante a automação dos testes, não foram identificados bugs funcionais evidentes na aplicação.
+
+No entanto, alguns pontos de atenção foram observados:
+
+- Dependência de dados fixos (usuários padrão)
+- Ausência de validações mais robustas em cenários negativos
+- Possível fragilidade em seletores não baseados em data-test
+
+## 📄 Documentação adicional
+
+- Estratégia de testes: /docs/test-strategy.md
+- Casos de teste: /docs/test-cases.md
+- Bugs encontrados: /docs/bugs-found.md
