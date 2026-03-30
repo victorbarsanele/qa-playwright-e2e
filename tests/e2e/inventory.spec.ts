@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
-import { InventoryPage } from '../pages/inventory.page';
-import { LoginPage } from '../pages/login.page';
-import user from '../fixtures/user.json';
+import { InventoryPage } from '../../pages/inventory.page';
+import { LoginPage } from '../../pages/login.page';
+import user from '../../fixtures/user.json';
 
 test.describe('Inventory', () => {
     // Before each test, perform login to ensure we are on the inventory page

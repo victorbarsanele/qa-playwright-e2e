@@ -3,10 +3,10 @@
 import { test } from '@playwright/test';
 
 // Import the LoginPage class to interact
-import { LoginPage } from '../pages/login.page';
+import { LoginPage } from '../../pages/login.page';
 
 // Import user credentials from a JSON file for testing
-import user from '../fixtures/user.json';
+import user from '../../fixtures/user.json';
 
 // Describe the test suite for login functionality
 test.describe('Login', () => {

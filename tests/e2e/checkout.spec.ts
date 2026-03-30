@@ -1,14 +1,14 @@
 import { test } from '@playwright/test';
-import { CheckoutPage } from '../pages/checkout.page';
-import { InventoryPage } from '../pages/inventory.page';
-import { LoginPage } from '../pages/login.page';
-import user from '../fixtures/user.json';
+import { CheckoutPage } from '../../pages/checkout.page';
+import { InventoryPage } from '../../pages/inventory.page';
+import { LoginPage } from '../../pages/login.page';
+import user from '../../fixtures/user.json';
 import {
     generateFirstName,
     generateLastName,
     generatePostalCode,
     generateUserData,
-} from '../utils/data-generator';
+} from '../../utils/data-generator';
 
 test.describe('Checkout', () => {
     // Before each test, perform login and navigate to the inventory page
