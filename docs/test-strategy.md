@@ -1,4 +1,4 @@
-﻿# E2E Test Strategy
+# E2E Test Strategy
 
 ## Index / Índice
 
@@ -82,6 +82,3 @@ Estes fluxos foram priorizados por representarem funcionalidades essenciais ao n
 | Bugs em fluxos secundários     | Médio   | Testes manuais complementares |
 | Falhas em ambiente de produção | Alto    | Monitoramento contínuo        |
 | Regressões não detectadas      | Médio   | Expansão futura de cobertura  |
-
-
-
