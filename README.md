@@ -45,20 +45,30 @@ qa-playwright-e2e/
 ├── .github/
 │   └── workflows/
 │       └── playwright.yml     # CI pipeline
+├── docs/
+│   ├── bugs-found.md          # Findings and observed issues
+│   ├── test-cases.md          # Functional test case catalog
+│   └── test-strategy.md       # E2E scope, approach, and risks
 ├── fixtures/
 │   └── user.json              # Shared test credentials
 ├── pages/
-│   ├── login.page.ts          # Login page object
-│   ├── inventory.page.ts      # Inventory page object
 │   ├── cart.page.ts           # Cart page object
-│   └── checkout.page.ts       # Checkout page object
+│   ├── inventory.page.ts      # Inventory page object
+│   ├── checkout.page.ts       # Checkout page object
+│   └── login.page.ts          # Login page object
+├── playwright-report/         # Generated HTML report output
+├── test-results/              # Generated Playwright artifacts
 ├── tests/
-│   ├── login.spec.ts          # Login test suite
-│   ├── inventory.spec.ts      # Inventory test suite
-│   ├── cart.spec.ts           # Cart test suite
-│   └── checkout.spec.ts       # Checkout test suite
+│   ├── api/                   # API test area
+│   ├── e2e/
+│   │   ├── cart.spec.ts       # Cart test suite
+│   │   ├── checkout.spec.ts   # Checkout test suite
+│   │   ├── inventory.spec.ts  # Inventory test suite
+│   │   └── login.spec.ts      # Login test suite
+│   └── smoke/                 # Smoke test area
 ├── utils/
 │   └── data-generator.ts      # Faker-based data helpers
+├── package-lock.json
 ├── playwright.config.ts       # Playwright configuration
 └── package.json
 ```
@@ -175,20 +185,30 @@ qa-playwright-e2e/
 ├── .github/
 │   └── workflows/
 │       └── playwright.yml     # Pipeline de CI
+├── docs/
+│   ├── bugs-found.md          # Achados e pontos de atenção
+│   ├── test-cases.md          # Catálogo de casos de teste
+│   └── test-strategy.md       # Escopo, abordagem e riscos E2E
 ├── fixtures/
 │   └── user.json              # Credenciais de teste compartilhadas
 ├── pages/
-│   ├── login.page.ts          # Page object da página de login
-│   ├── inventory.page.ts      # Page object da página de inventário
 │   ├── cart.page.ts           # Page object da página do carrinho
-│   └── checkout.page.ts       # Page object da página de checkout
+│   ├── inventory.page.ts      # Page object da página de inventário
+│   ├── checkout.page.ts       # Page object da página de checkout
+│   └── login.page.ts          # Page object da página de login
+├── playwright-report/         # Saída gerada do relatório HTML
+├── test-results/              # Artefatos gerados pelo Playwright
 ├── tests/
-│   ├── login.spec.ts          # Suite de testes de login
-│   ├── inventory.spec.ts      # Suite de testes de inventário
-│   ├── cart.spec.ts           # Suite de testes do carrinho
-│   └── checkout.spec.ts       # Suite de testes de checkout
+│   ├── api/                   # Área de testes de API
+│   ├── e2e/
+│   │   ├── cart.spec.ts       # Suite de testes do carrinho
+│   │   ├── checkout.spec.ts   # Suite de testes de checkout
+│   │   ├── inventory.spec.ts  # Suite de testes de inventário
+│   │   └── login.spec.ts      # Suite de testes de login
+│   └── smoke/                 # Área de testes smoke
 ├── utils/
 │   └── data-generator.ts      # Helpers de dados com Faker
+├── package-lock.json
 ├── playwright.config.ts       # Configuração do Playwright
 └── package.json
 ```
