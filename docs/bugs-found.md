@@ -1,4 +1,4 @@
-﻿# Bugs Found
+# Bugs Found
 
 ## Index / Índice
 
@@ -30,6 +30,3 @@ Isso pode indicar:
 
 - Aplicação estável nos fluxos testados
 - Cobertura limitada a cenários principais
-
-
-
